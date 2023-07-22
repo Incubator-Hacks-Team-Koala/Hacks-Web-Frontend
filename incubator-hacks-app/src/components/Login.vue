@@ -28,9 +28,9 @@
                     </button>
                 </form>
             </div>
-            <div id="register">
+            <div id="register-section">
                 <p>Don't have an account?</p>
-                <a href="/register">Register here</a>
+                <router-link to="/register">Register here</router-link>
             </div>
         </div>
     </div>
