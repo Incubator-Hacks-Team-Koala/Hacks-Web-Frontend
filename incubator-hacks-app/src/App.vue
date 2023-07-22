@@ -1,22 +1,14 @@
 <template>
-  <p>Choose what part of this page you want to see:</p>
-  <router-link to="/TestPage">Test Page</router-link><br>
-  <router-link to="/Test2">Test 2</router-link><br>
   <div>
-    <router-view></router-view>
+    <router-view />
   </div>
 </template>
 
-<!-- <script>
-import HelloWorld from './components/HelloWorld.vue'
-
+<script>
 export default {
-  name: 'App',
-  components: {
-    HelloWorld
-  }
+  name: 'App'
 }
-</script> -->
+</script>
 
 <style>
 #app {
