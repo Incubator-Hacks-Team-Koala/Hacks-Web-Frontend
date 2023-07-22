@@ -1,9 +1,4 @@
 <template>
-    <header>
-        <router-link to="/"><button class="header-btns home">Home</button></router-link>
-        <router-link to="/"><button @:click.once="logout" class="header-btns profile">Logout</button></router-link>
-    </header>
-
     <div class="body">
         <!-- this is all hardcoded af right now, change that later -->
         <div class="profile-img-container">
