@@ -1,6 +1,7 @@
 <template>
   <div>
     <router-view />
+    <!-- <router-link to="/profile">Profile</router-link><br> -->
   </div>
 </template>
 
