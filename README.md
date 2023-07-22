@@ -1,11 +1,15 @@
 # Hacks-Web-Frontend
 Hack Web Javascript - Vue project
 
-### Running the Project
-To run the project, follow these steps:
+### Project Setup
+```cmd
+cd incubator-hacks-app
+npm install
 ```
-$ cd incubator-hacks-app
-$ npm run serve
+
+### Running the Project
+```cmd
+npm run serve
 ```
 
 More details are available in the `README.md` inside the app dir.
