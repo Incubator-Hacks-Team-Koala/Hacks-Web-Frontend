@@ -1,10 +1,18 @@
-import Vue from 'vue';
+import { createApp } from 'vue';
+import { createRouter, createWebHistory } from 'vue-router';
+
 import App from './App.vue';
-import router from './router';
+import Login from './components/Login';
 
-Vue.config.productionTip = false;
+const router = createRouter({
+    history: createWebHistory(),
+    routes: [
+        { path: '/login', component: Login },
+    ]
+});
 
-new Vue({
-    router,
-    render: h => h(App),
-}).$mount('#app');
+const app = createApp(App);
+
+app.use(router);
+
+app.mount('#app');
