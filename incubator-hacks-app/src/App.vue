@@ -1,25 +1,28 @@
 <template>
+  <!-- this bit will have to be removed in favor of an ACTUAL fucking navbar -->
   <p>Choose what part of this page you want to see:</p>
   <router-link to="/TestPage">Test Page</router-link><br>
   <router-link to="/Test2">Test 2</router-link><br>
 
   <!-- put inside a button once we have that -->
-  <router-link to="/profile">Profile</router-link><br>
+  <span v-show="showProfile"><router-link to="/profile">Profile</router-link></span><br>
+
   <div>
     <router-view></router-view>
   </div>
 </template>
 
-<!-- <script>
-import HelloWorld from './components/HelloWorld.vue'
-
+<script>
 export default {
-  name: 'App',
-  components: {
-    HelloWorld
+  computed: {
+    showProfile() {
+      let isLoggedIn = true
+      return isLoggedIn
+      // TODO: change this to actually compute / figure out if the user is logged in
+    }
   }
 }
-</script> -->
+</script>
 
 <style>
 #app {

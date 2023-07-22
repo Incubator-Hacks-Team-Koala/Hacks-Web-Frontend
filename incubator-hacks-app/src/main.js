@@ -4,6 +4,7 @@ import { createRouter, createWebHistory } from 'vue-router'
 import App from './App.vue'
 import TestPage from './components/TestPage.vue'
 import Test2 from './components/Test2.vue'
+import Profile from './components/profile.vue'
 
 const router = createRouter({
     history: createWebHistory(),
