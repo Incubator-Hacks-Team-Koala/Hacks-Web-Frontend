@@ -1,9 +1,13 @@
 <template>
-  <img alt="Vue logo" src="./assets/logo.png">
-  <HelloWorld msg="Welcome to Your Vue.js App"/>
+  <p>Choose what part of this page you want to see:</p>
+  <router-link to="/TestPage">Test Page</router-link><br>
+  <router-link to="/Test2">Test 2</router-link><br>
+  <div>
+    <router-view></router-view>
+  </div>
 </template>
 
-<script>
+<!-- <script>
 import HelloWorld from './components/HelloWorld.vue'
 
 export default {
@@ -12,7 +16,7 @@ export default {
     HelloWorld
   }
 }
-</script>
+</script> -->
 
 <style>
 #app {
