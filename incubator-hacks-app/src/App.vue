@@ -1,32 +1,16 @@
 <template>
-  <!-- put inside a button once we have that -->
-  <span v-show="showProfile"><router-link to="/profile">Profile</router-link></span><br>
-
+  <!-- TODO: figure out how to hide if user not logged in -->
+  <button class="header-btns" v-if="$route.path != '/profile'"><router-link to="/profile">Profile</router-link></button>
   <div>
     <router-view />
-    <!-- <router-link to="/profile">Profile</router-link><br> -->
   </div>
 </template>
 
 <script>
-export default {
-  computed: {
-    showProfile() {
-      let isLoggedIn = true
-      return isLoggedIn
-      // TODO: change this to actually compute / figure out if the user is logged in
-    }
-  }
-}
+export default ({
+})
 </script>
 
 <style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
+@import './base.css';
 </style>
