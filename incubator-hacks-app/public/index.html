@@ -6,11 +6,65 @@
     <meta name="viewport" content="width=device-width,initial-scale=1.0">
     <link rel="icon" href="<%= BASE_URL %>favicon.ico">
     <title><%= htmlWebpackPlugin.options.title %></title>
+    <script src="https://unpkg.com/vue@3"></script>
   </head>
   <body>
-    <noscript>
-      <strong>We're sorry but <%= htmlWebpackPlugin.options.title %> doesn't work properly without JavaScript enabled. Please enable it to continue.</strong>
-    </noscript>
+
+
+    <!-- Leaving the tags blank before we decide on a stylesheet -->
+    <nav>
+      <div>
+        <a href="#">Hackathon</a>
+        <ul>
+          <li>
+            <a href="#">Home</a>
+          </li>
+          <li>
+            <a href="#">Events</a>
+          </li>
+          <li>
+            <a href="#">Teams</a>
+          </li>
+        </ul>
+      </div>
+      <div>
+        <ul>
+            <li>
+                <a href="#">Log in</a>
+            </li>
+            <li>
+                <a href="#">Sign up</a>
+            </li>
+        </ul>
+      </div>
+    </nav>
+
+    <div id="content">
+      <h1>{{ pageTitle }}</h1>
+      <p>{{ content }}</p>
+    </div>
+
+    <script>
+      Vue.createApp({
+        data() {
+          return {
+            pageTitle: "Incubator Hackathons",
+            content: "Network. Collaborate. Innovate."
+          }
+        }
+      }).mount("#content");
+
+    </script>
+
+
+
+
+
+
+
+
+
+
     <div id="app"></div>
     <!-- built files will be auto injected -->
   </body>
