@@ -1,4 +1,7 @@
 <template>
+  <!-- put inside a button once we have that -->
+  <span v-show="showProfile"><router-link to="/profile">Profile</router-link></span><br>
+
   <div>
     <router-view />
     <!-- <router-link to="/profile">Profile</router-link><br> -->
@@ -7,7 +10,13 @@
 
 <script>
 export default {
-  name: 'App'
+  computed: {
+    showProfile() {
+      let isLoggedIn = true
+      return isLoggedIn
+      // TODO: change this to actually compute / figure out if the user is logged in
+    }
+  }
 }
 </script>
 
