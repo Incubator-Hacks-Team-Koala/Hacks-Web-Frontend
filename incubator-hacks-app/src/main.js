@@ -4,6 +4,7 @@ import { createRouter, createWebHistory } from 'vue-router';
 import App from './App.vue';
 import Login from './components/Login';
 import Register from './components/Register';
+import Profile from './components/Profile.vue';
 
 const router = createRouter({
     history: createWebHistory(),

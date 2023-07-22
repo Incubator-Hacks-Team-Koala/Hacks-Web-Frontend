@@ -1,10 +1,6 @@
 <template>
-    <!-- two buttons, top right and top left corners; home and logout -->
-    <!-- basically the header-combo-navbar haha kebab -->
-
     <header>
         <router-link to="/"><button class="header-btns home">Home</button></router-link>
-
         <router-link to="/"><button @:click.once="logout" class="header-btns profile">Logout</button></router-link>
     </header>
 
