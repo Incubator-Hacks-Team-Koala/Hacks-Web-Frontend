@@ -2,6 +2,9 @@
   <p>Choose what part of this page you want to see:</p>
   <router-link to="/TestPage">Test Page</router-link><br>
   <router-link to="/Test2">Test 2</router-link><br>
+
+  <!-- put inside a button once we have that -->
+  <router-link to="/profile">Profile</router-link><br>
   <div>
     <router-view></router-view>
   </div>
