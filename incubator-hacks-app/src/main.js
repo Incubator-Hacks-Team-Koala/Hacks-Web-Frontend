@@ -5,9 +5,7 @@ import App from './App.vue';
 import Login from './components/Login.vue';
 import Register from './components/Register.vue';
 import Profile from './components/Profile.vue';
-import HackDeets from './components/HackDeets.vue';
-
-import HackItem from './components/HackItem.vue'
+import HackItem from './components/HackItem.vue';
 
 const router = createRouter({
     history: createWebHistory(),
