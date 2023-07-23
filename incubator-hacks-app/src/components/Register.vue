@@ -2,35 +2,35 @@
     <div id="container">
         <div id="register-container">
             <div class="register-section">
-                <form action="/register" method="post">
+                <form @submit.prevent="submitForm" method="post">
                     <div id="register-email" class="register-field">
                         <label for="register-email-field" class="form-label">Email</label>
-                        <input type="text" name="email" id="register-email-field" class="form-input">
+                        <input type="text" name="email" id="register-email-field" class="form-input" v-model="formData.email">
                         <span class="error-message hidden"></span>
                     </div>
                     <div id="register-fname" class="register-field">
                         <label for="register-fname-field" class="form-label">First Name</label>
-                        <input type="text" name="fname" id="register-fname-field" class="form-input">
+                        <input type="text" name="fname" id="register-fname-field" class="form-input" v-model="formData.first_name">
                         <span class="error-message hidden"></span>
                     </div>
                     <div id="register-sname" class="register-field">
                         <label for="register-sname-field" class="form-label">Surname</label>
-                        <input type="text" name="sname" id="register-sname-field" class="form-input">
+                        <input type="text" name="sname" id="register-sname-field" class="form-input" v-model="formData.last_name">
                         <span class="error-message hidden"></span>
                     </div>
                     <div id="register-username" class="register-field">
                         <label for="register-username-field" class="form-label">Username</label>
-                        <input type="text" name="username" id="register-username-field" class="form-input">
+                        <input type="text" name="username" id="register-username-field" class="form-input" v-model="formData.username">
                         <span class="error-message hidden"></span>
                     </div>
                     <div id="register-password" class="register-field">
                         <label for="register-password-field" class="form-label">Password</label>
-                        <input type="password" name="password" id="register-password-field" class="form-input" required>
+                        <input type="password" name="password" id="register-password-field" class="form-input" required v-model="formData.password">
                         <span class="error-message hidden"></span>
                     </div>
                     <div id="register-password-confirm" class="register-field">
                         <label for="register-password-confirm-field" class="form-label">Confirm Password</label>
-                        <input type="password" name="password-confirm" id="register-password-confirm-field" class="form-input" required>
+                        <input type="password" name="password-confirm" id="register-password-confirm-field" class="form-input" required v-model="formData.password2">
                         <span class="error-message hidden"></span>
                     </div>
                     <div id="register-submit">
@@ -47,8 +47,38 @@
 </template>
 
 <script>
+import axios from 'axios';
+
+import router from '../main.js';
+import { BASE_URL } from '../const.js'
+
 export default {
-    name: 'Register'
+    name: 'Register',
+    data() {
+        return {
+            formData: {
+                username: '',
+                password: '',
+                password2: '',
+                email: '',
+                first_name: '',
+                last_name: '',
+            },
+            error: null,
+        };
+    },
+    methods: {
+        async submitForm() {
+            try {
+                await axios.post(`${BASE_URL}/api/auth/register`, this.formData);
+                this.error = null;
+                router.push('/');
+            } catch (error) {
+                console.error(error);
+                this.error = error.message;
+            }
+        }
+    }
 }
 </script>
 

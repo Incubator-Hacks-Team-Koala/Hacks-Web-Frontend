@@ -2,19 +2,29 @@
     <div id="container">
         <div id="login-container">
             <div id="normal-login" class="login-section">
-                <form action="/login" method="post">
-                    <div id="login-email" class="login-field">
-                        <label for="login-email-field" class="form-label">Username or Email</label>
-                        <input type="text" name="email" id="login-email-field" class="form-input">
+                <form @submit.prevent="submitForm" method="post">
+                    <div id="login-username" class="login-field">
+                        <label for="login-username-field" class="form-label">Username</label>
+                        <input 
+                            type="text"
+                            name="username"
+                            id="login-username-field"
+                            class="form-input"
+                            v-model="formData.username"
+                            required
+                        >
                     </div>
                     <div id="login-password" class="login-field">
                         <label for="login-password-field" class="form-label">Password</label>
-                        <input type="password" name="password" id="login-password-field" class="form-input" required>
+                        <input type="password" name="password" id="login-password-field" class="form-input" v-model="formData.password" required>
                     </div>
                     <div id="login-submit">
                         <button id="login-button" class="login-button">Log In</button>
                     </div>
                 </form>
+                <div v-if="error">
+                    <p>{{ error }}</p>
+                </div>
             </div>
             <div id="external-login" class="login-section">
                 <form action="" method="post">
@@ -37,8 +47,34 @@
 </template>
 
 <script>
+import axios from 'axios';
+
+import router from '../main.js';
+import { BASE_URL } from '../const.js'
+
 export default {
-    name: 'Login'
+    name: 'Login',
+    data() {
+        return {
+            formData: {
+                username: '',
+                password: '',
+            },
+            error: null,
+        };
+    },
+    methods: {
+        async submitForm() {
+            try {
+                await axios.post(`${BASE_URL}/api/auth/login`, this.formData);
+                this.error = null;
+                router.push('/');
+            } catch (error) {
+                console.error(error);
+                this.error = error.message;
+            }
+        }
+    }
 }
 </script>
 
