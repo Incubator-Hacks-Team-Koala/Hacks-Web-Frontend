@@ -82,6 +82,11 @@ export default {
         async submitForm() {
             try {
                 await axios.post(`${BASE_URL}/api/auth/register`, this.formData);
+                const loginData = {
+                    username: this.formData.username,
+                    password: this.formData.password,
+                };
+                await axios.post(`${BASE_URL}/api/auth/login`, loginData);
                 this.error = null;
                 this.error_obj = {
                     username: '',
