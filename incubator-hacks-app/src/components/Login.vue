@@ -66,7 +66,8 @@ export default {
     methods: {
         async submitForm() {
             try {
-                await axios.post(`${BASE_URL}/api/auth/login`, this.formData);
+                const res = await axios.post(`${BASE_URL}/api/auth/login`, this.formData);
+                sessionStorage.setItem("token", res.data.access);
                 this.error = null;
                 router.push('/');
             } catch (error) {
