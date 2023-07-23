@@ -68,6 +68,8 @@ export default {
             try {
                 await axios.post(`${BASE_URL}/api/auth/login`, this.formData);
                 this.error = null;
+                this.$username = this.formData.username;
+                console.log(this.$username)
                 router.push('/');
             } catch (error) {
                 console.error(error);

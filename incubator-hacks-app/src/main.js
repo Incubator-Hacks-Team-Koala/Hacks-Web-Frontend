@@ -13,12 +13,13 @@ const router = createRouter({
         { path: '/' },
         { path: '/login', component: Login },
         { path: '/register', component: Register },
-        { path: '/profile', component: Profile},
+        { path: '/profile', component: Profile },
         // { path: '/hack/:id', component: HackDeets, props: true}
     ]
 });
 
 const app = createApp(App);
+app.config.globalProperties.$username = "";
 
 app.use(router);
 app.component("hack-item", HackItem)
