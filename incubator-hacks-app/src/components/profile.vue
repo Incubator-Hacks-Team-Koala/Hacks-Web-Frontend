@@ -1,27 +1,32 @@
 <template>
-    <div class="body">
-        <!-- this is all hardcoded af right now, change that later -->
-        <div class="profile-img-container">
 
-            <img class="profile-img" :src="getAvatarURL(imageName)" alt="User Avatar">
-        </div>
+<div class="profile-options">
+        <router-link to="/"><button class="header-btns side">My Teams</button></router-link><br>
+        <router-link to="/"><button class="header-btns side">Change Email</button></router-link><br>
+        <router-link to="/"><button class="header-btns side">Change Username</button></router-link><br>
+        <router-link to="/"><button class="header-btns side">Change Password</button></router-link>
+    </div>
 
-        <div class="profile-user-details">
-            <p style="padding-bottom: 0rem">{{ name }}</p>
-            <p>{{ bio }}</p>
-            <p>
-                Preferred Programming Languages:<br>
-                {{ languages }}
-            </p>
-            <p>
-                Preferred Developmental Areas:<br>
-                {{ devAreas }}
-            </p>
-            <p>
-                Fun Fact:<br>
-                {{ funFact }}
-            </p>
-        </div>
+    <!-- this is all hardcoded af right now, change that later -->
+    <div class="profile-img-container">
+        <img class="profile-img" :src="getAvatarURL(imageName)" alt="User Avatar">
+    </div>
+
+    <div class="profile-user-details">
+        <p style="padding-bottom: 0rem">{{ name }}</p>
+        <p>{{ bio }}</p>
+        <p>
+            Preferred Programming Languages:<br>
+            {{ languages }}
+        </p>
+        <p>
+            Preferred Developmental Areas:<br>
+            {{ devAreas }}
+        </p>
+        <p>
+            Fun Fact:<br>
+            {{ funFact }}
+        </p>
     </div>
 </template>
 
