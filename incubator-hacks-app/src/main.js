@@ -7,6 +7,8 @@ import Register from './components/Register.vue';
 import Profile from './components/Profile.vue';
 import HackDeets from './components/HackDeets.vue';
 
+import HackItem from './components/HackItem.vue'
+
 const router = createRouter({
     history: createWebHistory(),
     routes: [
@@ -21,6 +23,7 @@ const router = createRouter({
 const app = createApp(App);
 
 app.use(router);
+app.component("hack-item", HackItem)
 
 app.mount('#app');
 
