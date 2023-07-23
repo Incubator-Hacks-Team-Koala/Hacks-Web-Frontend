@@ -37,6 +37,11 @@
     overflow-y: auto;
 }
 
+/* .hack-clickable-box :hover {
+    background-color:lightgray;
+    cursor: pointer;
+} */
+
 .hack-box-text {
     text-align: left;
     margin-left: 2rem;
