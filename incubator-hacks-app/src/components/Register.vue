@@ -80,11 +80,17 @@ export default {
     },
     methods: {
         async submitForm() {
-            let res;
             try {
-                res = await axios.post(`${BASE_URL}/api/auth/register`, this.formData);
+                await axios.post(`${BASE_URL}/api/auth/register`, this.formData);
                 this.error = null;
-                this.error_obj = null;
+                this.error_obj = {
+                    username: '',
+                    password: '',
+                    password2: '',
+                    email: '',
+                    first_name: '',
+                    last_name: '',
+                };
                 router.push('/');
             } catch (error) {
                 console.error(error);
