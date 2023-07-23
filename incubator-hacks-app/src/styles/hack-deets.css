@@ -1,0 +1,43 @@
+.hack-deets-banner {
+    padding-top: 2rem;
+    width: 100%;
+    height: 10rem;
+    position: relative;
+}
+
+.hack-deets-btn-container {
+    position: absolute;
+    right: 5rem;
+    top: 3rem;
+}
+
+.hack-deets-btn {
+    margin-top: 1rem;
+}
+
+.hack-deets-view-team-btn {
+    position: absolute;
+    right: 5rem;
+    top: 4rem;
+}
+
+.hack-deets-project-btn {
+    margin-bottom: 2rem;
+}
+
+.hack-box {
+    border-style: solid;
+    border-color: black;
+    width: 40%;
+    max-width: 40%;
+    margin: 2rem;
+    display: inline-block;
+    vertical-align: top;
+    max-height: 30rem;
+    overflow-y: auto;
+}
+
+.hack-box-text {
+    text-align: left;
+    margin-left: 2rem;
+}
