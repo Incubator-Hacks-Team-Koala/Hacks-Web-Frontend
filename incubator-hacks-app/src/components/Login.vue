@@ -84,7 +84,7 @@ export default {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    height: 80vh;
+    height: 100%;
 }
 
 #login-container {
