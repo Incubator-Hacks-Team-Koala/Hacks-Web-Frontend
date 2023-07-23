@@ -110,6 +110,7 @@ export default {
     justify-content: center;
     height: 120vh;
     margin-bottom: 4rem;
+    margin-top: 3rem;
 }
 
 #register-container {
