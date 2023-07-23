@@ -40,8 +40,6 @@
 
     <div style="align-content: center">
       <hack-item :hacks=hackDetails />
-
-      <!-- <div v-if="error">{{ error }}</div> -->
     </div>
   </div>
 </template>
