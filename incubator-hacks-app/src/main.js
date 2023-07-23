@@ -6,6 +6,7 @@ import Login from './components/Login.vue';
 import Register from './components/Register.vue';
 import Profile from './components/Profile.vue';
 import HackItem from './components/HackItem.vue';
+import Enrol from './components/Enrol.vue';
 
 const router = createRouter({
     history: createWebHistory(),
@@ -14,6 +15,7 @@ const router = createRouter({
         { path: '/login', component: Login },
         { path: '/register', component: Register },
         { path: '/profile', component: Profile},
+        { path: '/enrol', component: Enrol }
         // { path: '/hack/:id', component: HackDeets, props: true}
     ]
 });

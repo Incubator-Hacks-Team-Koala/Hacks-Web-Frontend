@@ -13,6 +13,7 @@
       <p class="hack-box-text">
         Be there or be square!
       </p>
+      <router-link to='/enrol'><button class="btns hack-join-button">Join this Hack</button></router-link>
     </div>
   </div>
 </template>
