@@ -1,6 +1,4 @@
-<!-- NOT included in main.js because not sure how to implement the dynamic URL generation -->
-<!-- unless we don't want different URLS and just want to populate stuff based on what was clicked -->
-<!-- which could be a different headache in itself tbh -->
+<!-- IGNORE -->
 
 <template>
     <div class="hack-deets-banner">

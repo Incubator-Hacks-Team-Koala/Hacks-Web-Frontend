@@ -64,10 +64,9 @@ export default {
       try {
         let resp = await axios.get(`${BASE_URL}/api/hacks/hackathon`);
         this.hackDetails = resp.data
-        console.log(resp.data)
       } catch (error) {
         console.log(error);
-        return error.message;
+        this.hackDetails = error.message;
       }
     },
     logout() {

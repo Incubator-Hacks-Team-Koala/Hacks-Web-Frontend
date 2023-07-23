@@ -16,7 +16,7 @@ const router = createRouter({
         { path: '/login', component: Login },
         { path: '/register', component: Register },
         { path: '/profile', component: Profile},
-        { path: '/hack', component: HackDeets}
+        // { path: '/hack/:id', component: HackDeets, props: true}
     ]
 });
 
