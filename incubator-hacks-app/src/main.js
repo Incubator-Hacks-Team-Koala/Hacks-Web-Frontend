@@ -9,6 +9,7 @@ import HackDeets from './components/HackDeets.vue';
 import TeamCreate from './components/TeamCreate.vue';
 import TeamJoin from './components/TeamJoin.vue';
 import Team from './components/Team.vue';
+import HackItem from './components/HackItem.vue';
 
 const router = createRouter({
     history: createWebHistory(),
@@ -21,12 +22,15 @@ const router = createRouter({
         { path: '/team/create', component: TeamCreate },
         { path: '/team/join', component: TeamJoin },
         { path: '/teams/team/:name', component: Team },
+        { path: '/profile', component: Profile},
+        // { path: '/hack/:id', component: HackDeets, props: true}
     ]
 });
 
 const app = createApp(App);
 
 app.use(router);
+app.component("hack-item", HackItem)
 
 app.mount('#app');
 

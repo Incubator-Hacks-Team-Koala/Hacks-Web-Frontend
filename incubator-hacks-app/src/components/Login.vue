@@ -68,6 +68,7 @@ export default {
             try {
                 const res = await axios.post(`${BASE_URL}/api/auth/login`, this.formData);
                 sessionStorage.setItem("token", res.data.access);
+                sessionStorage.setItem("username", this.formData.username)
                 this.error = null;
                 router.push('/');
             } catch (error) {
@@ -85,7 +86,7 @@ export default {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    margin-top: 2rem;
+    margin-top: 3rem;
     height: 100%;
 }
 
