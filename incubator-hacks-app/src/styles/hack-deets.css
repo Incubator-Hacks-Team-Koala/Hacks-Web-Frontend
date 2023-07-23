@@ -21,16 +21,13 @@
     top: 4rem;
 }
 
-.hack-deets-body {
-    align-content: center;
-}
-
 .hack-box {
     border-style: solid;
     border-color: black;
     width: 40%;
-    display: inline-block;
     margin: 3rem;
+    display: inline-block;
+    vertical-align: top;
 }
 
 .hack-box-text {

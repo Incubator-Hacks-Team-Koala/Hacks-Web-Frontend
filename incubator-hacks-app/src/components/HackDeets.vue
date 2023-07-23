@@ -12,18 +12,36 @@
         </div>
         <button class="btns hack-deets-btn hack-deets-solo-btn" v-show="joinedTeam">View Team</button>
     </div>
-    <div class="hack-deets-body">
+    <div style="align-content: center;">
         <div class="hack-box">
-            <p class="hack-box-text">Placeholder</p>
+            <p class="hack-box-text">{{ hackName }}</p>
+            <p class="hack-box-text">{{ hackTime }}</p>
+            <p class="hack-box-text">{{ hackDesc }}</p>
         </div>
         <div class="hack-box">
             <p class="hack-box-text">This Hackathon's schedule:</p>
+            <p class="hack-box-text">{{ hackSchedule }}</p>
         </div>
     </div>
 </template>
 
 <script>
+// TOOD: get information from database based on what hack they clicked on
+
+let hackName = "Placeholder Name"
+let hackTime = "Placeholder Time"
+let hackDesc = "Lorem Ipsum whatever"
+let hackSchedule = "oh jeez this probably needs to be not string, huh"
+
 export default ({
+    data() {
+        return {
+            hackName,
+            hackTime,
+            hackDesc,
+            hackSchedule
+        }
+    },
     computed: {
         joinedTeam() {
             let joinedTeam = false
