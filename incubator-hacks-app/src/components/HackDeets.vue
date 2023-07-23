@@ -6,17 +6,24 @@
     <div class="hack-deets-banner">
         <!-- TODO: the img styles are PLACEHOLDERS. delete them after proper imagery is got -->
         <img style="height: 10rem; width: 100%;" src="../assets/kbLogo.png" alt="placeholder image">
-        <div class="hack-deets-btn-container">
-            <button class="btns hack-deets-btn" v-show="!joinedTeam">Create Team</button><br>
-            <button class="btns hack-deets-btn" v-show="!joinedTeam">Join Team</button>
+
+        <!-- show create/join if user hasn't joined a team -->
+        <div v-show="!joinedTeam" class="hack-deets-btn-container">
+            <button class="btns hack-deets-btn">Create Team</button><br>
+            <button class="btns hack-deets-btn">Join Team</button>
         </div>
-        <button class="btns hack-deets-btn hack-deets-solo-btn" v-show="joinedTeam">View Team</button>
+
+        <!-- show view if user has joined a team -->
+        <button class="btns hack-deets-btn hack-deets-view-team-btn" v-show="joinedTeam">View Team</button>
     </div>
-    <div style="align-content: center;">
+    <div style="align-content: center">
         <div class="hack-box">
             <p class="hack-box-text">{{ hackName }}</p>
             <p class="hack-box-text">{{ hackTime }}</p>
             <p class="hack-box-text">{{ hackDesc }}</p>
+            <p class="hack-box-text">Be there or be square (mandatory sentence)</p>
+            <!-- only show button if user is on a team -->
+            <button class="btns hack-deets-project-btn" v-show="joinedTeam">Submit Project</button>
         </div>
         <div class="hack-box">
             <p class="hack-box-text">This Hackathon's schedule:</p>
