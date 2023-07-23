@@ -5,6 +5,7 @@ import App from './App.vue';
 import Login from './components/Login.vue';
 import Register from './components/Register.vue';
 import Profile from './components/Profile.vue';
+import HackDeets from './components/HackDeets.vue';
 
 const router = createRouter({
     history: createWebHistory(),
@@ -12,7 +13,8 @@ const router = createRouter({
         { path: '/' },
         { path: '/login', component: Login },
         { path: '/register', component: Register },
-        { path: '/profile', component: Profile}
+        { path: '/profile', component: Profile},
+        { path: '/hack', component: HackDeets}
     ]
 });
 

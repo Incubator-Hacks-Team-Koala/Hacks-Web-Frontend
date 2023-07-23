@@ -1,10 +1,9 @@
 <template>
-
 <div class="profile-options">
-        <button class="header-btns side">My Teams</button><br>
-        <button class="header-btns side">Change Email</button><br>
-        <button class="header-btns side">Change Username</button><br>
-        <button class="header-btns side">Change Password</button>
+        <button class="btns profile-side">My Teams</button><br>
+        <button class="btns profile-side">Change Email</button><br>
+        <button class="btns profile-side">Change Username</button><br>
+        <button class="btns profile-side">Change Password</button>
     </div>
 
     <div class="profile-img-container">
@@ -62,5 +61,6 @@ export default ({
 </script>
 
 <style>
-@import '../base.css';
+@import '../styles/base.css';
+@import '../styles/profile.css'
 </style>
