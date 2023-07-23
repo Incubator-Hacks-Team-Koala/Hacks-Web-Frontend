@@ -37,9 +37,9 @@
 </template>
 
 <script>
-export default {
+export default ({
     name: 'Login'
-}
+})
 </script>
 
 <style scoped>
@@ -48,7 +48,7 @@ export default {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    height: 80vh;
+    height: 100%;
 }
 
 #login-container {
