@@ -15,6 +15,12 @@
 
 <script>
 export default ({
+  methods: {
+    logout() {
+        console.log("LOG OUT")
+        // TODO: replace with actual logout logic
+      },
+  },
   computed: {
     showLogout() {
       let isLoggedIn = false

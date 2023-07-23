@@ -39,6 +39,7 @@
     left: 40rem;
     font-size: 1rem;
     text-align: left;
+    max-width: 30rem;
 }
 
 /* gap between paragraphs */

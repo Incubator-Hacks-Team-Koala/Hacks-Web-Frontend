@@ -3,37 +3,58 @@
         <!-- this is all hardcoded af right now, change that later -->
         <div class="profile-img-container">
 
-            <!-- TODO: change to v-binds to dynamically update stuff -->
-            <img class="profile-img" src="../assets/kbLogo.png" alt="koalaBotLogo">
+            <img class="profile-img" :src="getAvatarURL(imageName)" alt="User Avatar">
         </div>
 
         <div class="profile-user-details">
-            <p style="padding-bottom: 0rem">Name</p>
-            <p>Short Bio</p>
+            <p style="padding-bottom: 0rem">{{ name }}</p>
+            <p>{{ bio }}</p>
             <p>
                 Preferred Programming Languages:<br>
-                WAHOOGA
+                {{ languages }}
             </p>
             <p>
                 Preferred Developmental Areas:<br>
-                ???????
+                {{ devAreas }}
             </p>
             <p>
                 Fun Fact:<br>
-                Programmers don't sleep.
+                {{ funFact }}
             </p>
         </div>
     </div>
 </template>
 
 <script>
+// TODO: get information from database about logged-in user
+
+let name = "Default Name"
+let username = "Default Username"
+let bio = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Habitant morbi tristique senectus et."
+let languages = "C#, Python, Java"
+let devAreas = "Full Stack"
+let funFact = "Love cheese."
+let imageName = "kbLogo.png"
+
 export default ({
+    data() {
+        return {
+            name,
+            username,
+            bio,
+            languages,
+            devAreas,
+            funFact,
+            imageName
+        }
+    },
     methods: {
-        logout() {
-        console.log("LOG OUT")
-        // TODO: replace with actual logout logic
-    }}
+        getAvatarURL(imageName) {
+            return require('../assets/' + imageName)
+        }
+    }
 })
+
 </script>
 
 <style>
