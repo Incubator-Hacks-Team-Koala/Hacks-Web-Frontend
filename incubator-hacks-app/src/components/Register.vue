@@ -6,37 +6,40 @@
                     <div id="register-email" class="register-field">
                         <label for="register-email-field" class="form-label">Email</label>
                         <input type="text" name="email" id="register-email-field" class="form-input" v-model="formData.email">
-                        <span class="error-message hidden"></span>
+                        <span v-if="error_obj['email']" class="error-message">{{ error_obj['email'][0] }}</span>
                     </div>
                     <div id="register-fname" class="register-field">
                         <label for="register-fname-field" class="form-label">First Name</label>
                         <input type="text" name="fname" id="register-fname-field" class="form-input" v-model="formData.first_name">
-                        <span class="error-message hidden"></span>
+                        <span v-if="error_obj['first_name']" class="error-message">{{ error_obj['first_name'][0] }}</span>
                     </div>
                     <div id="register-sname" class="register-field">
                         <label for="register-sname-field" class="form-label">Surname</label>
                         <input type="text" name="sname" id="register-sname-field" class="form-input" v-model="formData.last_name">
-                        <span class="error-message hidden"></span>
+                        <span v-if="error_obj['last_name']" class="error-message">{{ error_obj['last_name'][0] }}</span>
                     </div>
                     <div id="register-username" class="register-field">
                         <label for="register-username-field" class="form-label">Username</label>
                         <input type="text" name="username" id="register-username-field" class="form-input" v-model="formData.username">
-                        <span class="error-message hidden"></span>
+                        <span v-if="error_obj['username']" class="error-message">{{ error_obj['username'][0] }}</span>
                     </div>
                     <div id="register-password" class="register-field">
                         <label for="register-password-field" class="form-label">Password</label>
                         <input type="password" name="password" id="register-password-field" class="form-input" required v-model="formData.password">
-                        <span class="error-message hidden"></span>
+                        <span v-if="error_obj['password']" class="error-message">{{ error_obj['password'][0] }}</span>
                     </div>
                     <div id="register-password-confirm" class="register-field">
                         <label for="register-password-confirm-field" class="form-label">Confirm Password</label>
                         <input type="password" name="password-confirm" id="register-password-confirm-field" class="form-input" required v-model="formData.password2">
-                        <span class="error-message hidden"></span>
+                        <span v-if="error_obj['password2']" class="error-message">{{ error_obj['password2'][0] }}</span>
                     </div>
                     <div id="register-submit">
                         <button id="register-button" class="register-button">Register</button>
                     </div>
                 </form>
+                <div v-if="error">
+                    <p>{{ error }}</p>
+                </div>
             </div>
             <div id="register">
                 <p>Already have an account?</p>
@@ -65,17 +68,28 @@ export default {
                 last_name: '',
             },
             error: null,
+            error_obj: {
+                username: '',
+                password: '',
+                password2: '',
+                email: '',
+                first_name: '',
+                last_name: '',
+            },
         };
     },
     methods: {
         async submitForm() {
+            let res;
             try {
-                await axios.post(`${BASE_URL}/api/auth/register`, this.formData);
+                res = await axios.post(`${BASE_URL}/api/auth/register`, this.formData);
                 this.error = null;
+                this.error_obj = null;
                 router.push('/');
             } catch (error) {
                 console.error(error);
                 this.error = error.message;
+                this.error_obj = error.response.data;
             }
         }
     }
@@ -88,7 +102,7 @@ export default {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    height: 100vh;
+    height: 120vh;
     margin-bottom: 4rem;
 }
 
