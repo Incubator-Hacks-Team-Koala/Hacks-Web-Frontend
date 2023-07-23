@@ -1,13 +1,12 @@
 <template>
 
 <div class="profile-options">
-        <router-link to="/"><button class="header-btns side">My Teams</button></router-link><br>
-        <router-link to="/"><button class="header-btns side">Change Email</button></router-link><br>
-        <router-link to="/"><button class="header-btns side">Change Username</button></router-link><br>
-        <router-link to="/"><button class="header-btns side">Change Password</button></router-link>
+        <button class="header-btns side">My Teams</button><br>
+        <button class="header-btns side">Change Email</button><br>
+        <button class="header-btns side">Change Username</button><br>
+        <button class="header-btns side">Change Password</button>
     </div>
 
-    <!-- this is all hardcoded af right now, change that later -->
     <div class="profile-img-container">
         <img class="profile-img" :src="getAvatarURL(imageName)" alt="User Avatar">
     </div>
@@ -50,7 +49,7 @@ export default ({
             languages,
             devAreas,
             funFact,
-            imageName
+            imageName,
         }
     },
     methods: {
