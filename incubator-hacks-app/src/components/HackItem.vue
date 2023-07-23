@@ -11,7 +11,7 @@
       <button @click="enrolAlone(hack.id)" class="btns hack-join-button">
         Join this Hack (Solo)
       </button>
-      <button @click="enrolTeam" class="btns hack-join-button">
+      <button @click="enrolTeam(hack.id)" class="btns hack-join-button">
         Join this Hack (Team)
       </button>
     </div>
@@ -50,7 +50,7 @@ export default {
         console.log(error)
       }
     },
-    async enrolTeam() {
+    async enrolTeam(hack_id) {
       try {
         // await axios.post(`${BASE_URL}/api/hacks/hackathon/${hack_id}/team/${team_name}/enrol`, formData)
         this.joinedMsg = "Joined Team!"
